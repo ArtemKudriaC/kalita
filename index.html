@@ -3,36 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="taste" content="personal">
 <title>Kalita</title>
 <meta name="description" content="Support for the Kalita app for iPhone.">
-<style>
-  :root { --bg: #fbfaf7; --text: #1d1b19; --muted: #6b6660; --link: #5a49e0; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #141312; --text: #f1eee9; --muted: #a39d95; --link: #a99cff; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text);
-         font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-         -webkit-text-size-adjust: 100%; }
-  main { max-width: 680px; margin: 0 auto; padding: 48px 16px 80px; }
-  h1 { font-size: 32px; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 8px; }
-  h2 { font-size: 20px; line-height: 1.3; margin: 32px 0 8px; }
-  p { margin: 0 0 12px; }
-  .muted { color: var(--muted); }
-  a { color: var(--link); }
-</style>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="g-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4.2"/><path d="M3.8 20.2c.6-4.1 4-6.7 8.2-6.7s7.6 2.6 8.2 6.7c.1.5-.3.8-.8.8H4.6c-.5 0-.9-.3-.8-.8z"/></symbol><symbol id="g-card" viewBox="0 0 24 24"><path d="M2.5 7.5A2.5 2.5 0 0 1 5 5h14a2.5 2.5 0 0 1 2.5 2.5V9h-19V7.5zM2.5 11h19v5.5A2.5 2.5 0 0 1 19 19H5a2.5 2.5 0 0 1-2.5-2.5V11zm3 4.2c0 .4.3.8.8.8h3.4a.8.8 0 0 0 0-1.6H6.3c-.5 0-.8.4-.8.8z"/></symbol><symbol id="g-people" viewBox="0 0 24 24"><circle cx="8.5" cy="8.5" r="3.5"/><circle cx="16.5" cy="9" r="3"/><path d="M1.8 19.4c.5-3.4 3.3-5.6 6.7-5.6s6.2 2.2 6.7 5.6c.1.4-.3.6-.7.6H2.5c-.4 0-.8-.2-.7-.6zM16 20c.1-2.3-.6-4.4-2-5.9.8-.4 1.6-.6 2.5-.6 2.9 0 5.2 1.9 5.7 4.8.1.4-.2.7-.6.7H16z"/></symbol><symbol id="g-bell" viewBox="0 0 24 24"><path d="M12 2.5a6.5 6.5 0 0 0-6.5 6.5v3.6L3.8 15.4c-.4.7.1 1.6.9 1.6h14.6c.8 0 1.3-.9.9-1.6l-1.7-2.8V9A6.5 6.5 0 0 0 12 2.5zM9.2 18.5a2.9 2.9 0 0 0 5.6 0H9.2z"/></symbol><symbol id="g-doc" viewBox="0 0 24 24"><path d="M6 2.5h7.5L19.5 8.5V19A2.5 2.5 0 0 1 17 21.5H6A2.5 2.5 0 0 1 3.5 19V5A2.5 2.5 0 0 1 6 2.5zm7 1.2V8a1 1 0 0 0 1 1h4.3L13 3.7zM7.5 13a.8.8 0 0 0 0 1.6h8a.8.8 0 0 0 0-1.6h-8zm0 3.4a.8.8 0 0 0 0 1.6h5a.8.8 0 0 0 0-1.6h-5z"/></symbol><symbol id="g-photo" viewBox="0 0 24 24"><path d="M5 4h14a2.5 2.5 0 0 1 2.5 2.5v11A2.5 2.5 0 0 1 19 20H5a2.5 2.5 0 0 1-2.5-2.5v-11A2.5 2.5 0 0 1 5 4zm3 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3.5 17.2V17.5c0 .8.7 1.5 1.5 1.5h14c.8 0 1.5-.7 1.5-1.5v-2.3l-4.3-4.3a1 1 0 0 0-1.4 0L9.5 16.2l-1.8-1.8a1 1 0 0 0-1.4 0l-2.8 2.8z"/></symbol><symbol id="g-mic" viewBox="0 0 24 24"><path d="M12 2.5a3.5 3.5 0 0 0-3.5 3.5v6a3.5 3.5 0 0 0 7 0V6A3.5 3.5 0 0 0 12 2.5z"/><path d="M5.8 11a.8.8 0 0 1 .8.8 5.4 5.4 0 0 0 10.8 0 .8.8 0 0 1 1.6 0 7 7 0 0 1-6.2 6.9v2.5a.8.8 0 0 1-1.6 0v-2.5a7 7 0 0 1-6.2-6.9c0-.5.3-.8.8-.8z"/></symbol><symbol id="g-lock" viewBox="0 0 24 24"><path d="M12 2.5A4.5 4.5 0 0 0 7.5 7v2.5H7A2.5 2.5 0 0 0 4.5 12v7A2.5 2.5 0 0 0 7 21.5h10a2.5 2.5 0 0 0 2.5-2.5v-7A2.5 2.5 0 0 0 17 9.5h-.5V7A4.5 4.5 0 0 0 12 2.5zm-2.9 7V7a2.9 2.9 0 0 1 5.8 0v2.5H9.1zM12 13.3a1.7 1.7 0 0 1 .8 3.2v1.4a.8.8 0 0 1-1.6 0v-1.4a1.7 1.7 0 0 1 .8-3.2z"/></symbol><symbol id="g-bolt" viewBox="0 0 24 24"><path d="M13.6 2.2 4.4 13.3c-.4.5 0 1.2.6 1.2H11l-1.2 7.1c-.1.7.8 1.1 1.3.5l9.2-11.1c.4-.5 0-1.2-.6-1.2H13.6l1.2-7.1c.1-.7-.8-1.1-1.2-.5z"/></symbol><symbol id="g-mail" viewBox="0 0 24 24"><path d="M4.5 4.5h15A2.5 2.5 0 0 1 22 7v.4l-10 6-10-6V7a2.5 2.5 0 0 1 2.5-2.5z"/><path d="M2 9.3V17a2.5 2.5 0 0 0 2.5 2.5h15A2.5 2.5 0 0 0 22 17V9.3l-9.5 5.7a1 1 0 0 1-1 0L2 9.3z"/></symbol><symbol id="g-globe" viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zm-1.5 1.7c-1.3 1.6-2.2 3.9-2.4 6.6H4.2a7.9 7.9 0 0 1 6.3-6.6zm3 0a7.9 7.9 0 0 1 6.3 6.6h-3.9c-.2-2.7-1.1-5-2.4-6.6zM12 4.4c1.2 1.3 2.1 3.6 2.3 6.4H9.7c.2-2.8 1.1-5.1 2.3-6.4zM4.2 12.4h3.9c.2 2.7 1.1 5 2.4 6.6a7.9 7.9 0 0 1-6.3-6.6zm5.5 0h4.6c-.2 2.8-1.1 5.1-2.3 6.4-1.2-1.3-2.1-3.6-2.3-6.4zm6.2 0h3.9a7.9 7.9 0 0 1-6.3 6.6c1.3-1.6 2.2-3.9 2.4-6.6z"/></symbol><symbol id="g-rate" viewBox="0 0 24 24"><path d="M7.2 3.4a.8.8 0 0 1 1.1 0l3.4 3.4a.8.8 0 0 1-1.1 1.1L8.6 5.8V16a.8.8 0 0 1-1.6 0V5.8L5 7.9a.8.8 0 0 1-1.1-1.1l3.3-3.4zM16.2 7.2a.8.8 0 0 1 .8.8v10.2l2.1-2.1a.8.8 0 0 1 1.1 1.1l-3.4 3.4a.8.8 0 0 1-1.1 0l-3.3-3.4a.8.8 0 0 1 1.1-1.1l2.1 2.1V8c0-.4.3-.8.6-.8z"/></symbol><symbol id="g-trash" viewBox="0 0 24 24"><path d="M9.5 2.5h5a1.5 1.5 0 0 1 1.5 1.5v1h4a.8.8 0 0 1 0 1.6h-1l-.9 12.6A2.5 2.5 0 0 1 15.6 21.5H8.4a2.5 2.5 0 0 1-2.5-2.3L5 6.6H4a.8.8 0 0 1 0-1.6h4V4a1.5 1.5 0 0 1 1.5-1.5zm0 1.6V5h5v-.9h-5zm.2 6.4a.8.8 0 0 0-.8.8l.3 6.5a.8.8 0 0 0 1.6 0l-.3-6.5a.8.8 0 0 0-.8-.8zm4.6 0a.8.8 0 0 0-.8.8l-.3 6.5a.8.8 0 0 0 1.6 0l.3-6.5a.8.8 0 0 0-.8-.8z"/></symbol><symbol id="g-cloud" viewBox="0 0 24 24"><path d="M12.5 5a6 6 0 0 1 5.8 4.5A4.8 4.8 0 0 1 17.7 19H6.5a4.5 4.5 0 0 1-.8-8.9A6 6 0 0 1 12.5 5z"/></symbol><symbol id="g-key" viewBox="0 0 24 24"><path d="M15 2.5a6.5 6.5 0 0 0-6.2 8.4l-6 6a1 1 0 0 0-.3.7v2.6c0 .6.4 1 1 1h2.6c.6 0 1-.4 1-1v-1.2h1.2c.6 0 1-.4 1-1v-1.2h1.2l1.2-1.2A6.5 6.5 0 1 0 15 2.5zm1.6 3.4a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6z"/></symbol><symbol id="g-phone" viewBox="0 0 24 24"><path d="M8 1.5h8A2.5 2.5 0 0 1 18.5 4v16a2.5 2.5 0 0 1-2.5 2.5H8A2.5 2.5 0 0 1 5.5 20V4A2.5 2.5 0 0 1 8 1.5zm2.5 1.8a.7.7 0 0 0 0 1.4h3a.7.7 0 0 0 0-1.4h-3zm-.7 16.3c0 .4.3.8.8.8h2.8a.8.8 0 0 0 0-1.6h-2.8c-.5 0-.8.4-.8.8z"/></symbol></svg>
+<nav class="bar"><a class="brand" href="./"><img src="icon.png" width="28" height="28" alt="">Kalita</a><a href="privacy.html">Privacy policy</a></nav>
 <main>
-<h1>Kalita</h1>
-<p class="muted">Personal finance for iPhone.</p>
-
-<h2>Support</h2>
-<p>Questions or problems with the app? Email <a href="mailto:ak98nneon@gmail.com">ak98nneon@gmail.com</a>.</p>
-<p lang="pl">Pytania lub problemy z aplikacją? Napisz na <a href="mailto:ak98nneon@gmail.com">ak98nneon@gmail.com</a>.</p>
-
-<h2>Privacy</h2>
-<p><a href="privacy.html">Privacy policy</a> · <a href="privacy.html#pl" lang="pl">Polityka prywatności</a></p>
+<section class="doc" id="en" lang="en">
+<header class="hero">
+<img class="icon" src="icon.png" width="104" height="104" alt="">
+<h1>Kalita support</h1>
+<p class="acts"><a class="pill black" href="mailto:ak98nneon@gmail.com">Email Artem</a><a class="pill" href="#pl" lang="pl">Polski</a></p>
+</header>
+<article class="sheet"><p>Questions or problems with the app? Write to <a href="mailto:ak98nneon@gmail.com">ak98nneon@gmail.com</a>. Artem, who makes Kalita, reads every message.</p><nav class="tiles"><a class="tile t0" href="privacy.html"><span class="mk"><svg><use href="#g-lock"/></svg></span><b>Privacy policy</b><span>What Kalita stores and where.</span></a><a class="tile t1" href="privacy.html#en-s7"><span class="mk"><svg><use href="#g-doc"/></svg></span><b>Export your transactions</b><span>Settings, Export CSV saves them as a file.</span></a><a class="tile t2" href="privacy.html#en-s3"><span class="mk"><svg><use href="#g-cloud"/></svg></span><b>Receipt photos</b><span>Saved in your own iCloud, not on our server.</span></a><a class="tile t3" href="privacy.html#en-s6"><span class="mk"><svg><use href="#g-trash"/></svg></span><b>Delete your account</b><span>Settings, then Delete account. It cannot be undone.</span></a></nav></article>
+</section>
+<section class="doc" id="pl" lang="pl">
+<header class="hero">
+<img class="icon" src="icon.png" width="104" height="104" alt="">
+<h1>Pomoc Kalita</h1>
+<p class="acts"><a class="pill black" href="mailto:ak98nneon@gmail.com">Napisz do Artema</a><a class="pill" href="#en" lang="en">English</a></p>
+</header>
+<article class="sheet"><p>Pytania lub problemy z aplikacją? Napisz na <a href="mailto:ak98nneon@gmail.com">ak98nneon@gmail.com</a>. Artem, który tworzy Kalita, czyta każdą wiadomość.</p><nav class="tiles"><a class="tile t0" href="privacy.html#pl"><span class="mk"><svg><use href="#g-lock"/></svg></span><b>Polityka prywatności</b><span>Co Kalita przechowuje i gdzie.</span></a><a class="tile t1" href="privacy.html#pl-s7"><span class="mk"><svg><use href="#g-doc"/></svg></span><b>Eksportuj transakcje</b><span>Ustawienia, Eksport CSV zapisuje je do pliku.</span></a><a class="tile t2" href="privacy.html#pl-s3"><span class="mk"><svg><use href="#g-cloud"/></svg></span><b>Zdjęcia paragonów</b><span>Zapisywane w Twoim własnym iCloud, nie na naszym serwerze.</span></a><a class="tile t3" href="privacy.html#pl-s6"><span class="mk"><svg><use href="#g-trash"/></svg></span><b>Usuń konto</b><span>Ustawienia, potem Usuń konto. Tego nie można cofnąć.</span></a></nav></article>
+</section>
 </main>
 </body>
 </html>
